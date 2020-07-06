@@ -1,0 +1,84 @@
+@import "../tpls/category/category-tpl.wxss";
+
+.category-container{
+    /*min-height: 100vh;*/
+}
+.category-box{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.left-box{
+    flex: 0 0 150rpx;
+    border-right:1rpx solid #D8D8D8;
+}
+.menu-item{
+    height: 50rpx;
+    padding: 20rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:28rpx;
+    border-left: 6rpx solid #fff;
+}
+.menu-item.selected{
+    color: #E61717;
+    border-left-color:#E61717;
+}
+
+.right-box{
+    flex: 1;
+    transition: all 500ms ease-in-out;
+}
+.tanslate0{
+    transform:translate(0,0);
+}
+.tanslate1{
+    transform:translate(0,-100vh);
+}
+.tanslate2{
+    transform:translate(0,-200vh);
+}
+.tanslate3{
+    transform:translate(0,-300vh);
+}
+.tanslate4{
+    transform:translate(0,-400vh);
+}
+.tanslate5{
+    transform:translate(0,-500vh);
+}
+.tanslate6{
+    transform:translate(0,-600vh);
+}
+.tanslate7{
+    transform:translate(0,-700vh);
+}
+.tanslate8{
+    transform:translate(0,-800vh);
+}
+.tanslate9{
+    transform:translate(0,-900vh);
+}
+.tanslate10{
+    transform:translate(0,-1000vh);
+}
+.tanslate11{
+    transform:translate(0,-1100vh);
+}
+.tanslate12{
+    transform:translate(0,-1200vh);
+}
+.tanslate13{
+    transform:translate(0,-1300vh);
+}
+.tanslate14{
+    transform:translate(0,-1400vh);
+}
+.tanslate15{
+    transform:translate(0,-1500vh);
+}
+.foods-type-box{
+    height: 100vh;
+}

@@ -1,0 +1,27 @@
+<!--地址管理-->
+<view class="container my-container" ontap="editAddress" hidden="{{!loadingHidden}}">
+  <view class="my-address">
+    <block wx:if="{{addressInfo}}">
+      <view class="item-title">
+        我的地址
+      </view>
+      <view  class="item-main">
+          <view class="section">
+            <input disabled name="name" placeholder="姓名" value="姓名：{{addressInfo.name}}" />
+          </view>
+          <view class="section">
+            <input disabled type="number" name="mobile" placeholder="手机号码" value="手机号码：{{addressInfo.mobile}}"/>
+          </view>
+          <view class="section">
+            <input disabled name="detail" placeholder="收货地址" value="详细地址：{{addressInfo.totalDetail}}"/>
+          </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="add-new-address" ontap="editAddress"><text class="icon">+</text><text>添加地址</text></view>
+    </block>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

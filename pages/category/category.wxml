@@ -1,0 +1,67 @@
+<import src="../tpls/category/category-tpl.wxml"/>
+
+<view class="container category-container" hidden="{{!loadingHidden}}">
+  <view class="category-box">
+    <!-- 分类列表 -->
+    <view class="left-box">
+      <block wx:for="{{categoryTypeArr}}">
+        <view class="menu-item {{currentMenuIndex==index?'selected':''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="changeCategory" data-title-name="{{item.name}}">{{item.name}}</view>
+      </block>
+    </view>
+
+    <!-- 分类商品 -->
+    <view class="right-box {{transClassArr[currentMenuIndex]}}">
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo0}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo1}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo2}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo3}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo4}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo5}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo6}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo7}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo8}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo9}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo10}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo11}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo12}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo13}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo14}}"/>
+      </scroll-view>
+      <scroll-view class="foods-type-box" scroll-y="true">
+        <template is="categorydetail" data="{{categoryInfo:categoryInfo15}}"/>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

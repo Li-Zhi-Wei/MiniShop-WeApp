@@ -1,0 +1,78 @@
+@import "../tpls/base.wxss";
+
+.my-container{
+    background-color:#EDEDED;
+    height: 100vh;
+    /* align-items: flex-start; */
+    justify-content:flex-start;
+}
+.my-header{
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 30rpx;
+    font-size: 28rpx;
+    width: 100vw;
+    margin: 15rpx;
+}
+.my-header .image{
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 15rpx;
+    margin-left: 50rpx;
+    overflow:hidden; 
+}
+.my-header .text{
+    margin-left: 25rpx;
+    font-size: 32rpx;
+}
+.my-header button{
+  width:100vw;
+  height: 160rpx;
+  background: none;
+  border: none;
+  position: absolute;
+}
+
+.list{
+  display: flex;
+  flex-direction:column;
+  align-content: flex-start;
+}
+.section{
+  background-color: #fff;
+  margin-left:0rpx;
+  display: flex;
+  align-items: center; 
+  border-bottom-style: solid;
+  border-bottom-width: 1rpx;
+  border-bottom-color:#EDEDED;
+  width: 100vw;
+  height: 100rpx;
+}
+.section text{
+  align-items: center; 
+  margin-left:60rpx;
+  font-size:36rpx;
+}
+.section button{
+  width:100vw;
+  height: 80rpx;
+  background: none;
+  border: none;
+  position: absolute;
+}
+button::after {
+  border: none;
+}
+.section image{
+  position: absolute;
+  transform: rotate(270deg);
+  height: 48rpx;
+  width: 48rpx;
+  right: 20rpx;
+}
+/* .section:last-child{
+  margin-bottom:15rpx;
+} */

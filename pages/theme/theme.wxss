@@ -1,0 +1,16 @@
+@import "../tpls/base.wxss";
+@import "../tpls/products/products-tpl.wxss";
+
+.container{
+  background-color: #F5F6F5;
+  display: block;
+  min-height: 100vh;
+}
+.theme-header {
+  width: 100vw;
+  margin-bottom:20rpx;
+  position: relative;
+}
+.theme-header image{
+  width: 100%;
+}

@@ -1,0 +1,22 @@
+
+<!-- 商品列表模板 -->
+
+<template name="products">
+  <view class="products-box">
+    <block wx:for="{{products}}">
+      <view class="products-item" data-id="{{item.id}}" bindtap="onProductsItemTap">
+        <image class="products-image" src="{{item.main_img_url}}" mode="aspectFit"></image>
+        <view wx:if="{{!item.stock}}" class="products-stock">
+          <text decode='true'>缺&emsp;&emsp;货</text>
+        </view>
+        <view class="products-item-bottom">
+          <text class="name double-line">{{item.name}}</text>
+          <view class="tags">
+            <text class="price">￥{{item.price}}</text>
+            <text class="tag" wx:if="{{item.postage}}">包邮</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

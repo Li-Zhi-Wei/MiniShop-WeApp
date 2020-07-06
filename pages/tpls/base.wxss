@@ -1,0 +1,76 @@
+.no-data{
+    display: flex;
+    height: 140rpx;
+    font-size: 26rpx;
+    color: #ccc;
+    align-items: center;
+    justify-content: center;
+}
+.upper-word{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-size: 45rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color:rgba(0,0,0,.25);
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+/*订单三种状态*/
+.order-status-txt{
+    font-size: 24rpx;
+}
+.order-status-txt.unpay{
+    color: #B42F2D;
+}
+.order-status-txt.payed{
+    color: #AB956D;
+}
+.order-status-txt.done{
+    color: #57AB53;
+}
+
+.order-no-txt{
+    letter-spacing: 2rpx;
+    color: #999;
+}
+
+/* 文字显示2行 */
+.double-line{
+  display: -webkit-box; /*定义为自适应布局 */
+  overflow: hidden; /*多出部分隐藏*/
+  text-overflow: ellipsis; /*超出文字用省略号代替*/
+  word-wrap: break-word; /*规定换行符*/
+  -webkit-line-clamp: 2; /*设定行数为2*/
+  -webkit-box-orient: vertical; /*竖直方向的超出和隐藏*/
+}
+/* 文字显示1行 */
+.single-line{
+  display: -webkit-box; /*定义为自适应布局 */
+  overflow: hidden; /*多出部分隐藏*/
+  text-overflow: ellipsis; /*超出文字用省略号代替*/
+  word-wrap: break-word; /*规定换行符*/
+  -webkit-line-clamp: 1; /*设定行数为2*/
+  -webkit-box-orient: vertical; /*竖直方向的超出和隐藏*/
+}
+/* 标签 */
+.tag{
+  font-size: 20rpx;
+  color: #E61717;
+  margin: 8rpx 16rpx 0;
+  border: 1px solid #E61717;
+  border-radius: 8rpx;
+  display: inline-block;
+  width: 60rpx;
+  height: 26rpx;
+  text-align:center;
+}

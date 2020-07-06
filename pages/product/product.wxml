@@ -1,0 +1,130 @@
+<view class="container detail-container" hidden="{{!loadingHidden}}">
+  <view class="detail-header-box">
+    <view class="detail-topic-img">
+      <image src="{{product.main_img_url}}" mode="aspectFit"></image>
+    </view>
+
+    <view class="basic-info-box">
+      <!-- <view class="stock" wx:if="{{product.stock>0}}">有货</view> -->
+      <view class="name">{{product.name}}</view>
+      <view class="stock-no" wx:if="{{product.stock==0}}">缺货</view>
+      <view class="summary" wx:if="{{product.summary!=null}}">{{product.summary}}</view>
+      <view class="price">￥{{product.price}}</view>
+      <view class="show-price" wx:if="{{product.show_price!=null}}">￥{{product.show_price}}</view>
+      <view class="sale" wx:if="{{product.sale!=null}}">销量:{{product.sale}}</view>
+    </view>
+  </view>
+
+  <!--规格选择-->
+  <view class="modal modal-bottom-dialog" hidden="{{specHideFlag}}">
+
+    <view class="modal-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+
+      <view class="spec-popup-box">
+        <view class="spec-product-box">
+          <image src="{{sku.img}}" class="spec-popup-img"></image>
+          <!-- 图片 -->
+          <view class="spec-product-price">
+            <view class="spec-price">￥{{sku.price}}</view>
+            <!-- 价格 -->
+            <view class="spec-name">
+              <text wx:if="{{sku.name}}">{{sku.name}} </text>
+              <text wx:if="{{sku.stock >= 0}}">库存：{{sku.stock}} </text>
+              <text wx:if="{{sku.postage == 0}}">运费：包邮</text>
+              <text wx:if="{{sku.postage > 0}}">运费：{{sku.postage}}</text>
+            </view>
+          </view>
+        </view>
+
+        <scroll-view class="spec-box" scroll-y="true">
+          <view class="spec-attr-title">规格</view>
+          <view class="spec-attr-box">
+            <block wx:for="{{product.sku}}">
+              <!-- sku -->
+              <view class="spec-attr-item {{sku.id == item.id ? 'spec-attr-item-active' : ''}} {{item.status == 0 ? 'disabled' : ''}} {{item.stock > 0 ? '' : 'disabled'}}" data-id="{{item.id}}" bindtap="onSpecTap">{{item.name}}</view>
+            </block>
+          </view>
+
+          <view class="spec-number-box spec-attr-title">
+            <view class="spec-attr-title">数量</view>
+            <!-- 加减按钮 -->
+            <view class="number-box">
+              <view class="spec-item-counts">
+                <view class="btns {{productCounts==1?'disabled':''}}" bindtap="changeCounts" data-type="cut">-</view>
+                <view class="counts">{{productCounts}}</view>
+                <view class="btns {{productCounts<sku.stock?'':'disabled'}}" bindtap="changeCounts" data-type="add">+</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+
+        <view class="spec-operation">
+          <view class="spec-btn add" bindtap="onAddingToCartTap">加入购物车</view>
+          <view class="spec-btn buy" bindtap="submitOrder">立即购买</view>
+        </view>
+        <view class="spec-icon-close" bindtap="hideModal">✕</view>
+
+      </view>
+    </view>
+
+  </view>
+  <!-- 规格选择 END-->
+  <!-- 参数 -->
+  <view class="detail-bottom-box">
+    <view class="tabs-box">
+      <block wx:for="{{['商品详情' ,'产品参数']}}">
+        <view class="tabs-item {{currentTabsIndex==index?'selected':''}}" bindtap="onTabsItemTap" data-index="{{index}}">
+          {{item}}
+        </view>
+      </block>
+    </view>
+    <view class="product-detail-box">
+      <view class="product-detail-imgs" hidden="{{currentTabsIndex!=0}}">
+        <block wx:for="{{product.imgs}}">
+          <image src="{{item.img_url.url}}" mode="widthFix"></image>
+        </block>
+      </view>
+      <view class="product-detail-properties" hidden="{{currentTabsIndex!=1}}">
+        <block wx:for="{{product.properties}}">
+          <view class="properties-item">
+            <view class="properties-name">{{item.name}}</view>
+            <view class="properties-detail">{{item.detail}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!--底部操作栏-->
+  <view class="footer">
+    <view class="footer-left">
+      <view class="footer-left-item" >
+        <button send-message-title="{{product.name}}" send-message-img="{{product.main_img_url}}" show-message-card="true" send-message-path="pages/product/product?id={{id}}" class='kefu' open-type='contact'>
+        </button>
+        <image src="../../imgs/icon/kefu.png"></image>
+        <text class="footer-left-item-text">客服</text>
+      </view>
+      <view class="footer-left-item" bindtap="onHomeTap">
+        <image src="../../imgs/icon/shouye.png"></image>
+        <text class="footer-left-item-text">首页</text>
+      </view>
+      <view class="footer-left-item" bindtap="onCartTap">
+        <image src="../../imgs/icon/gouwuche.png"></image>
+        <text class="tui-operation-text tui-scale-small">购物车</text>
+        <text wx:if="{{cartTotalCounts>0}}" class="cart-number">{{cartTotalCounts}}</text>
+      </view>
+    </view>
+    <view class="footer-right" bindtap="showModal">
+      <view class="spec-btn add">加入购物车</view>
+      <view class="spec-btn buy">立即购买</view>
+    </view>
+  </view>
+
+</view>
+
+
+
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

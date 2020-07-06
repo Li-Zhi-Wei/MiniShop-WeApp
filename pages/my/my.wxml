@@ -1,0 +1,23 @@
+<view class="container my-container">
+  <view class="my-header">
+    <image class="image" src="{{userInfo.avatarUrl}}"></image>
+    <text class="text">{{userInfo.nickName}}</text>
+    <button wx:if="{{showAuth}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  </view>
+
+  <view class="list">
+    <view class="section" bindtap="onMyAddressTap">
+      <text>我的地址</text>
+      <image src="../../imgs/icon/arrow@right.png"></image>
+    </view>
+    <view class="section" bindtap="onMyOrderTap">
+      <text>我的订单</text>
+      <image src="../../imgs/icon/arrow@right.png"></image>
+    </view>
+    <view class="section">
+      <text>在线客服</text>
+      <button open-type="contact" bindcontact="handleContact"></button>
+      <image src="../../imgs/icon/arrow@right.png"></image>
+    </view>
+  </view>
+</view>

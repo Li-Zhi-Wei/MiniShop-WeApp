@@ -1,0 +1,67 @@
+@import "../tpls/base.wxss";
+@import "../tpls/products/products-tpl.wxss";
+.container{
+  background-color: #F5F6F5;
+}
+.swiper{
+  height: 400rpx;
+  width: 100%;
+}
+.swiper-box{
+  overflow-x: hidden;
+}
+.banner-item{
+  height: 100%;
+  width: 100%;
+}
+.banner-item image{
+  height: 100%;
+  width: 100%;
+}
+
+.home-main-header{
+  display: flex;
+  height: 60rpx;
+  color: #E61717;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+
+.home-main-theme{
+  /*margin: 20rpx 0;*/
+}
+.theme-box{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.theme-item{
+  display: flex;
+  height:375rpx;
+  width: 375rpx;
+  border-bottom: 4rpx solid #F5F6F5;
+  position: relative;
+  box-sizing: border-box;
+}
+.theme-item:first-child{
+  /* border-right:4rpx solid #F5F6F5; */
+}
+.theme-item.big{
+  width: 100%;
+}
+.theme-item image{
+  height: 100%;
+  width: 100%;
+}
+
+.shop-status{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

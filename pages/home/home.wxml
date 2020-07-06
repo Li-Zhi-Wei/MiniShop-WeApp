@@ -1,0 +1,47 @@
+<!--pages/home/home.wxml-->
+
+<import src="../tpls/products/products-tpl.wxml"/>
+
+<view class="container" hidden="{{!loadingHidden}}" wx:if="{{shopStatus}}">
+
+  <!-- 首页轮播图 -->
+  <swiper indicator-dots="true" autoplay="true" class="swiper">
+    <block wx:for="{{bannerArr}}">
+      <swiper-item class="banner-item" data-id="{{item.key_word}}" data-type="{{item.type}}" bindtap="onBannerTap">
+        <image mode="aspectFill" class="item-image" src="{{item.img.url}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  
+  <view class="home-main">
+
+    <!-- 精选主题 -->
+    <view class="home-main-theme">
+      <view class="home-main-header">精选推荐</view>
+      <view class="theme-box">
+        <block wx:for="{{themeArr}}">
+          <view wx:if="{{index==2}}" class="theme-item big" data-id="{{item.id}}" bindtap="onThemesItemTap">
+            <image src="{{item.topic_img.url}}"></image>
+          </view>
+          <view wx:else class="theme-item" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onThemesItemTap">
+            <image src="{{item.topic_img.url}}"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 商品列表 -->
+    <view class="home-main-products">
+      <view class="home-main-header">最近新品</view>
+      <template is="products" data="{{products:productsArr}}"></template>
+    </view>
+
+  </view>
+</view>
+<view wx:else class="shop-status">
+  <view>店铺还没开门哦，过会再来吧。</view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>
