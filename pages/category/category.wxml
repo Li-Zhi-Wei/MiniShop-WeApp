@@ -12,52 +12,52 @@
     <!-- 分类商品 -->
     <view class="right-box {{transClassArr[currentMenuIndex]}}">
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo0}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[0]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo1}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[1]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo2}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[2]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo3}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[3]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo4}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[4]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo5}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[5]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo6}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[6]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo7}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[7]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo8}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[8]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo9}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[9]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo10}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[10]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo11}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[11]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo12}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[12]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo13}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[13]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo14}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[14]}}"/>
       </scroll-view>
       <scroll-view class="foods-type-box" scroll-y="true">
-        <template is="categorydetail" data="{{categoryInfo:categoryInfo15}}"/>
+        <template is="categorydetail" data="{{categoryInfo:categoryTypeArr[15]}}"/>
       </scroll-view>
     </view>
   </view>

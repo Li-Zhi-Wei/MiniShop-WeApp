@@ -1,0 +1,10 @@
+<import src="../../tpls/products/products-tpl.wxml"/>
+
+<view class="container">
+  <!-- <view class="theme-header">
+    <image src="{{head_img}}" mode="widthFix"></image>
+  </view> -->
+  <view class="theme-main">
+    <template is="products" data="{{products:subCategoryInfo}}"></template>
+  </view>
+</view>

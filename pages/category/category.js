@@ -21,23 +21,10 @@ Page({
 
   // 加载所有数据
   _loadData:function(){
-    var that = this
     category.getCategoryType((categoryData)=>{
-      that.setData({
+      this.setData({
         categoryTypeArr:categoryData,
         loadingHidden: true
-      });
-      //要在回调里再进行获取分类详情的方法调用
-      that.getProductsByCategory(categoryData[0].id, (data) => {
-        var dataObj = {
-          procucts:data,
-          topImgUrl:categoryData[0].img.url,
-          title:categoryData[0].name
-        };
-        that.setData({
-          loadingHidden: true,
-          categoryInfo0:dataObj
-        });
       });
     });
   },
@@ -49,21 +36,6 @@ Page({
     this.setData({
       currentMenuIndex: index
     });
-
-    //如果数据是第一次请求
-    if (!this.isLoadedData(index)) {
-      var that = this;
-      this.getProductsByCategory(id, (data) => {
-        that.setData(that.getDataObjForBind(index, data));
-      });
-    }
-  },
-
-  isLoadedData: function (index) {
-    if (this.data['categoryInfo' + index]) {
-      return true;
-    }
-    return false;
   },
 
   //获得分类的内容
@@ -78,17 +50,19 @@ Page({
     return obj;
   },
 
-  getProductsByCategory: function (id, callback) {
-    category.getProductsByCategory(id, (data) => {
-      callback && callback(data);
-    });
-  },
-
   /*跳转到商品详情*/
-  onProductsItemTap: function (event) {
+  // onProductsItemTap: function (event) {
+  //   var id = category.getDataSet(event, 'id');
+  //   wx.navigateTo({
+  //     url: '../product/product?id=' + id
+  //   })
+  // },
+
+  /*跳转到二级分类详情*/
+  onSubCategoryTap: function (event) {
     var id = category.getDataSet(event, 'id');
     wx.navigateTo({
-      url: '../product/product?id=' + id
+      url: 'sub-category/sub-category?id=' + id
     })
   },
 
